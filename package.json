@@ -1,10 +1,17 @@
 {
   "name": "missing-in-node",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "Functions that exist in common browsers but are missing in node",
   "main": "src/main.js",
   "keywords": [
-    "string", "number", "random", "atob", "btoa", "browser", "utils", "utilities"
+    "string",
+    "number",
+    "random",
+    "atob",
+    "btoa",
+    "browser",
+    "utils",
+    "utilities"
   ],
   "scripts": {
     "start": "node src/main.js",

@@ -4,7 +4,7 @@
   "description": "Functions that exist in common browsers but are missing in node",
   "main": "src/main.js",
   "keywords": [
-    "utilities"
+    "string", "number", "random", "atob", "btoa", "browser", "utils", "utilities"
   ],
   "scripts": {
     "start": "node src/main.js",

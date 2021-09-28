@@ -59,3 +59,42 @@ describe("Test crypto functions", function() {
 		expect(array[0]).to.be.lessThan(256).and.to.be.above(-1, "crypto.getRandomValues did not return correct random numbers");
 	});
 });
+
+describe("Test the random functions", function() {
+	it("Test randomInt function", function() {
+		let number1 = M.randomInt(100);
+		let number2 = M.randomInt(100, 200);
+
+		expect(number1).to.be.above(-1).and.to.be.lessThan(100, "number1 is incorrect");
+		expect(number2).to.be.above(99).and.to.be.lessThan(200, "number2 is incorrect");
+	});
+
+	it("Test randomFloat function", function() {
+		let number1 = M.randomFloat(100);
+		let number2 = M.randomFloat(100, 200);
+
+		expect(number1).to.be.above(-1).and.to.be.lessThan(100, "number1 is incorrect");
+		expect(number2).to.be.above(99).and.to.be.lessThan(200, "number2 is incorrect");
+	});
+
+	it("Test randomBool function", function() {
+		let value = M.randomBool();
+
+		expect(typeof value).to.be.equal("boolean", "value is not bool");
+	});
+
+	it("Test randomFromArray function", function() {
+		let list = [123, "hello", -1.1234, false, "world"];
+		let value = M.randomFromList(list);
+
+		expect(list).to.include(value, "value is not in list");
+	});
+
+	it("Test randomFromObject function", function() {
+		let object = { "a": 1, "b": 2, "c": 3 };
+		let entry = M.randomFromObject(object);
+		let key = Object.keys(entry)[0];
+
+		expect(object[key]).to.be.equal(entry[key], "entry is not in object");
+	});
+});

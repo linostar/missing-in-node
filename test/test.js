@@ -98,3 +98,17 @@ describe("Test the random functions", function() {
 		expect(object[key]).to.be.equal(entry[key], "entry is not in object");
 	});
 });
+
+describe("Test character functions", function() {
+	it("Test chr function", function() {
+		let char = M.chr(65);
+
+		expect(char).to.be.equal("A", "char is incorrect");
+	});
+
+	it("Test ord function", function() {
+		let number = M.ord("A");
+
+		expect(number).to.be.equal(65, "number is incorrect");
+	});
+});

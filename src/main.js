@@ -67,6 +67,14 @@ function randomFromObject(object) {
 	return out;
 }
 
+function chr(number) {
+	return String.fromCharCode(number);
+}
+
+function ord(char) {
+	return char.charCodeAt();
+}
+
 
 module.exports = {
 	atob,
@@ -77,5 +85,7 @@ module.exports = {
 	randomFloat,
 	randomBool,
 	randomFromList,
-	randomFromObject
+	randomFromObject,
+	chr,
+	ord,
 };

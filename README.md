@@ -27,3 +27,5 @@ console.log(M.btoa("Encode this string")); // outputs: RW5jb2RlIHRoaXMgc3RyaW5n
 - `randomFromObject(obj: object): object` ---> returns a random key-value pair from an object
 - `crypto.randomInt(n1: int, n2: int) : int` ---> cryptograhically secure random integer generator
 - `crypto.getRandomValues(array) : array` ---> fills an array with random values likes its browser counterpart
+- `chr(num: int) : string` ---> an alias for String.fromCharCode
+- `ord(char: string): int` ---> an alias for String.prototype.charCodeAt

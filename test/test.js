@@ -112,3 +112,29 @@ describe("Test character functions", function() {
 		expect(number).to.be.equal(65, "number is incorrect");
 	});
 });
+
+describe("Test numerical functions", function() {
+	it("Test bin function", function() {
+		let num = M.bin(70);
+
+		expect(num).to.be.equal("1000110", "num is incorrect");
+	});
+
+	it("Test oct function", function() {
+		let num = M.oct(70);
+
+		expect(num).to.be.equal("106", "num is incorrect");
+	});
+
+	it("Test hex function", function() {
+		let num = M.hex(70);
+
+		expect(num).to.be.equal("46", "num is incorrect");
+	});
+
+	it("Test dec function", function() {
+		let num = M.dec("46", 16);
+
+		expect(num).to.be.equal(70, "num is incorrect");
+	});
+});

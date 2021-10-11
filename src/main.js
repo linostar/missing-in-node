@@ -75,6 +75,25 @@ function ord(char) {
 	return char.charCodeAt();
 }
 
+function bin(num) {
+	// convert decimal to binary
+	return num.toString(2);
+}
+
+function oct(num) {
+	// convert decimal to binary
+	return num.toString(8);
+}
+
+function hex(num) {
+	// convert decimal to binary
+	return num.toString(16);
+}
+
+function dec(str, base) {
+	return parseInt(str, base);
+}
+
 
 module.exports = {
 	atob,
@@ -88,4 +107,8 @@ module.exports = {
 	randomFromObject,
 	chr,
 	ord,
+	bin,
+	oct,
+	hex,
+	dec,
 };

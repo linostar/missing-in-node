@@ -137,6 +137,26 @@ describe("Test numerical functions", function() {
 
 		expect(num).to.be.equal(70, "num is incorrect");
 	});
+
+	it("Test factorial function", function() {
+		let num = M.factorial(6);
+
+		expect(num).to.be.equal(720, "num is incorrect");
+	});
+
+	it("Test fibonacci function", function() {
+		let num = M.fibonacci(9);
+
+		expect(num).to.be.equal(34, "num is incorrect");
+	});
+
+	it("Test isPrime function", function() {
+		let res1 = M.isPrime(7823);
+		let res2 = M.isPrime(7825);
+
+		expect(res1).to.be.equal(true, "res1 is incorrect");
+		expect(res2).to.be.equal(false, "res2 is incorrect");
+	});
 });
 
 describe("Test string functions", function() {

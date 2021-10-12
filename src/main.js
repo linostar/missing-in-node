@@ -94,6 +94,42 @@ function dec(str, base) {
 	return parseInt(str, base);
 }
 
+function factorial(num) {
+	let result = 1;
+	num = parseInt(num);
+	for (let i = 1; i <= num; i++) {
+		result *= i;
+	}
+	return result;
+}
+
+function fibonacci(num) {
+	// returns the n-th number in fibnoacci series
+	num = parseInt(num);
+	if (num < 3)
+		return 1;
+	let tmp;
+	let f1 = 1, f2 = 1;
+	for (let i = 3; i <= num; i++) {
+		tmp = f2;
+		f2 = f1 + f2;
+		f1 = tmp;
+	}
+	return f2;
+}
+
+function isPrime(num) {
+	if (num <= 3)
+		return num > 1;
+	if (num % 2 == 0 || num % 3 == 0)
+		return false;
+	for (let i = 5; i * i < num ; i++) {
+		if (num % i == 0 || num % (i + 2) == 0)
+			return false;
+	}
+	return true;
+}
+
 function startsWith(str, start) {
 	return str.substr(0, start.length) === start;
 }
@@ -119,6 +155,9 @@ module.exports = {
 	oct,
 	hex,
 	dec,
+	factorial,
+	fibonacci,
+	isPrime,
 	startsWith,
 	endsWith,
 };

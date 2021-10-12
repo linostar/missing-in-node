@@ -94,6 +94,14 @@ function dec(str, base) {
 	return parseInt(str, base);
 }
 
+function startsWith(str, start) {
+	return str.substr(0, start.length) === start;
+}
+
+function endsWith(str, end) {
+	return str.substr(-end.length, end.length) === end;
+}
+
 
 module.exports = {
 	atob,
@@ -111,4 +119,6 @@ module.exports = {
 	oct,
 	hex,
 	dec,
+	startsWith,
+	endsWith,
 };

@@ -138,3 +138,21 @@ describe("Test numerical functions", function() {
 		expect(num).to.be.equal(70, "num is incorrect");
 	});
 });
+
+describe("Test string functions", function() {
+	it("Test startsWith function", function() {
+		let res1 = M.startsWith("Hello World!", "hello");
+		let res2 = M.startsWith("Hello World!", "Hello");
+
+		expect(res1).to.be.equal(false, "res1 is incorrect");
+		expect(res2).to.be.equal(true, "res2 is incorrect");
+	});
+
+	it("Test endsWith function", function() {
+		let res1 = M.endsWith("Hello World!", "ld");
+		let res2 = M.endsWith("Hello World!", "orld!");
+
+		expect(res1).to.be.equal(false, "res1 is incorrect");
+		expect(res2).to.be.equal(true, "res2 is incorrect");
+	});
+});

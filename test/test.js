@@ -139,9 +139,11 @@ describe("Test numerical functions", function() {
 	});
 
 	it("Test factorial function", function() {
-		let num = M.factorial(6);
+		let num1 = M.factorial(6);
+		let num2 = M.factorial(13);
 
-		expect(num).to.be.equal(720, "num is incorrect");
+		expect(num1).to.be.equal(720, "num1 is incorrect");
+		expect(num2).to.be.equal(6227020800, "num2 is incorrect");
 	});
 
 	it("Test fibonacci function", function() {

@@ -45,3 +45,10 @@ console.log(M.btoa("Encode this string")); // outputs: RW5jb2RlIHRoaXMgc3RyaW5n
 - `factorial(num: int) : int` calculates the factorial of a positive integer
 - `fibonacci(num: int) : int` calculates the n-th number in fibonacci series using non-recursive method
 - `isPrime(num: int) : bool` determines whether an integer is prime or not
+
+### List functions
+- `listEquals(list1, list2) : bool` determines if two arrays or two sets are equal (for primitive type elements only)
+- `shuffle(arr: array) : array` returns a shuffled array (using Knuth method) without modifying the original one
+- `union(set1: set, set2: set) : set` returns the union of two sets
+- `intersection(set1: set, set2: set) : set` returns the intersection of two sets
+- `difference(set1: set, set2: set) : set` returns the difference of two sets

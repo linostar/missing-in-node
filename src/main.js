@@ -138,6 +138,53 @@ function endsWith(str, end) {
 	return str.substr(-end.length, end.length) === end;
 }
 
+function listEquals(list1, list2) {
+	if (list1.__proto__ === list2.__proto__ && list1.__proto__ === Set.prototype) {
+		if (list1.size !== list2.size)
+			return false;
+		return [...list1].every(x => list2.has(x));
+	}
+	else if (list1.__proto__ === list2.__proto__ && list1.__proto__ === Array.prototype) {
+		if (list1.length !== list2.length)
+			return false;
+		for (let i = 0; i < list1.length; i++) {
+			if (list1[i] !== list2[i] && !isNaN(list1[i]) && !isNaN(list2[i]))
+				return false;
+		}
+		return true;
+	}
+	else {
+		throw new TypeError("The 2 arguments need to be 2 sets or 2 arrays");
+	}
+}
+
+function shuffle(arr) {
+	// Knuth shuffle
+	let result = [];
+	let currentIndex = arr.length;
+	let randomIndex;
+	for (let i = 0; i < arr.length; i++)
+		result[i] = arr[i];
+	while (currentIndex != 0) {
+		randomIndex = randomInt(currentIndex)
+		currentIndex--;
+		[result[randomIndex], result[currentIndex]] = [result[currentIndex], result[randomIndex]];
+	}
+	return result;
+}
+
+function union(set1, set2) {
+	return new Set([...set1, ...set2]);
+}
+
+function intersection(set1, set2) {
+	return new Set([...set1].filter(x => set2.has(x)));
+}
+
+function difference(set1, set2) {
+	return new Set([...set1].filter(x => !set2.has(x)));
+}
+
 
 module.exports = {
 	atob,
@@ -160,4 +207,9 @@ module.exports = {
 	isPrime,
 	startsWith,
 	endsWith,
+	listEquals,
+	shuffle,
+	union,
+	intersection,
+	difference,
 };

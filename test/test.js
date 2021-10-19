@@ -178,3 +178,43 @@ describe("Test string functions", function() {
 		expect(res2).to.be.equal(true, "res2 is incorrect");
 	});
 });
+
+describe("Test array functions", function() {
+	it("Test shuffle function", function() {
+		let arr = [0, 1, 2, 3, 4, 5, 6, 7, 8, 9];
+		let arr2 = M.shuffle(arr);
+
+		expect(arr2).to.have.lengthOf(arr.length, "length of resulting array is incorrect");
+		expect(arr2.sort().toString()).to.be.equal(arr.toString(), "array values are incorrect");
+	});
+});
+
+describe("Test set functions", function() {
+	it("Test union function", function() {
+		let set1 = new Set([1, 4, 7, 10]);
+		let set2 = new Set([1, 3, 5, 7, 9]);
+		let expectedResult = new Set([1, 3, 4, 5, 7, 9, 10]);
+		let setUnion = M.union(set1, set2);
+
+		expect(M.listEquals(setUnion, expectedResult)).to.be.equal(true, "sets are not equal");
+	});
+
+	it("Test intersection function", function() {
+		let set1 = new Set([1, 4, 7, 10]);
+		let set2 = new Set([1, 3, 5, 7, 9]);
+		let expectedResult = new Set([1, 7]);
+		let setIntersect = M.intersection(set1, set2);
+
+		expect(M.listEquals(setIntersect, expectedResult)).to.be.equal(true, "sets are not equal");
+	});
+
+	it("Test difference function", function() {
+		let set1 = new Set([1, 4, 7, 10]);
+		let set2 = new Set([1, 3, 5, 7, 9]);
+		let expectedResult = new Set([4, 10]);
+		let setDifference = M.difference(set1, set2);
+
+		expect(M.listEquals(setDifference, expectedResult)).to.be.equal(true, "sets are not equal");
+	});
+});
+

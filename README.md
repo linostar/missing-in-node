@@ -1,5 +1,7 @@
 # missing-in-node
 
+![Build](https://github.com/linostar/missing-in-node/actions/workflows/main.yml/badge.svg)
+
 Javascript functions needed repeatedly but missing in Node.
 
 ## How to install and use

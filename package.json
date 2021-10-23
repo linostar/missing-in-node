@@ -11,7 +11,10 @@
     "btoa",
     "browser",
     "utils",
-    "utilities"
+    "utilities",
+    "factorial",
+    "fibonacci",
+    "set"
   ],
   "scripts": {
     "start": "node src/main.js",

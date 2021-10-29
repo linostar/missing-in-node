@@ -83,6 +83,48 @@ describe("Test the random functions", function() {
 		expect(typeof value).to.be.equal("boolean", "value is not bool");
 	});
 
+	it("Test randomAlphaNumeric function", function() {
+		let chars = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789";
+		let value = M.randomAlphaNumeric();
+
+		expect(chars.includes(value)).to.be.equal(true, "value is not in chars");
+	});
+
+	it("Test randomAlpha function", function() {
+		let chars = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz";
+		let value = M.randomAlpha();
+
+		expect(chars.includes(value)).to.be.equal(true, "value is not in chars");
+	});
+
+	it("Test randomAlphaUpper function", function() {
+		let chars = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
+		let value = M.randomAlphaUpper();
+
+		expect(chars.includes(value)).to.be.equal(true, "value is not in chars");
+	});
+
+	it("Test randomAlphaLower function", function() {
+		let chars = "abcdefghijklmnopqrstuvwxyz";
+		let value = M.randomAlphaLower();
+
+		expect(chars.includes(value)).to.be.equal(true, "value is not in chars");
+	});
+
+	it("Test randomDigit function", function() {
+		let chars = "0123456789";
+		let value = M.randomDigit();
+
+		expect(chars.includes(value)).to.be.equal(true, "value is not in chars");
+	});
+
+	it("Test randomHexDigit function", function() {
+		let chars = "0123456789ABCDEFGH";
+		let value = M.randomHexDigit();
+
+		expect(chars.includes(value)).to.be.equal(true, "value is not in chars");
+	});
+
 	it("Test randomFromArray function", function() {
 		let list = [123, "hello", -1.1234, false, "world"];
 		let value = M.randomFromList(list);

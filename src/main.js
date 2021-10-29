@@ -56,6 +56,36 @@ function randomBool() {
 	return Math.floor(Math.random() * 2) ? true : false;
 }
 
+function randomAlphaNumeric() {
+	let chars = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789";
+	return chars.substr(randomInt(chars.length), 1);
+}
+
+function randomAlpha() {
+	let chars = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz";
+	return chars.substr(randomInt(chars.length), 1);
+}
+
+function randomAlphaUpper() {
+	let chars = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
+	return chars.substr(randomInt(chars.length), 1);
+}
+
+function randomAlphaLower() {
+	let chars = "abcdefghijklmnopqrstuvwxyz";
+	return chars.substr(randomInt(chars.length), 1);
+}
+
+function randomDigit() {
+	let chars = "0123456789";
+	return chars.substr(randomInt(chars.length), 1);
+}
+
+function randomHexDigit() {
+	let chars = "0123456789ABCDEF";
+	return chars.substr(randomInt(chars.length), 1);
+}
+
 function randomFromList(list) {
 	return list[randomInt(list.length)];
 }
@@ -194,6 +224,12 @@ module.exports = {
 	randomInt,
 	randomFloat,
 	randomBool,
+	randomAlphaNumeric,
+	randomAlpha,
+	randomAlphaUpper,
+	randomAlphaLower,
+	randomDigit,
+	randomHexDigit,
 	randomFromList,
 	randomFromObject,
 	chr,

@@ -34,6 +34,12 @@ console.log(M.btoa("Encode this string")); // outputs: RW5jb2RlIHRoaXMgc3RyaW5n
 - `randomInt(n1: int, n2: int) : int` fast but cryptographically insecure function that returns an integer between 0 and (n1 - 1) if only n1 is provided, otherwise an integer between n1 and (n2 - 1)
 - `randomFloat(n1: float, n2: float) : float` returns a float between 0 and n1 if only n1 is provided, otherwise a float between n1 and n2
 - `randomBool() : bool` returns true or false randomly
+- `randomAlphaNumeric() : string` returns a random alphanumeric character (from A-Z or a-z or 0-9)
+- `randomAlpha() : string` returns a random alpha character (from A-Z or a-z)
+- `randomAlphaUpper() : string` returns a random uppercase alpha character (from A-Z)
+- `randomAlphaLower() : string` returns a random lowercase alpha character (from a-z)
+- `randomDigit() : string` returns a random decimal digit character (from 0-9)
+- `randomHexDigit() : string` returns a random hexadecimal digit character (from 0-9 or A-F)
 - `randomFromList(list: array) : any` returns a random element from list
 - `randomFromObject(obj: object): object` returns a random key-value pair from an object
 - `crypto.randomInt(n1: int, n2: int) : int` cryptograhically secure random integer generator

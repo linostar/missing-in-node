@@ -219,6 +219,12 @@ describe("Test string functions", function() {
 		expect(res1).to.be.equal(false, "res1 is incorrect");
 		expect(res2).to.be.equal(true, "res2 is incorrect");
 	});
+
+	it("Test multiplyString function", function() {
+		let res = M.multiplyString("abc", 3)
+
+		expect(res).to.be.equal("abcabcabc", "res is incorrect");
+	});
 });
 
 describe("Test array functions", function() {
@@ -260,3 +266,12 @@ describe("Test set functions", function() {
 	});
 });
 
+describe("Test function-related functions", function() {
+	it("Test repeatFunction function", function() {
+		let func = (x) => x * 2;
+		let ret = M.repeatFunction(func, 3, [4]);
+		let expectedResult = [8, 8, 8]
+
+		expect(M.listEquals(ret, expectedResult)).to.be.equal(true, "arrays are not equal");
+	});
+});

@@ -26,6 +26,7 @@ console.log(M.btoa("Encode this string")); // outputs: RW5jb2RlIHRoaXMgc3RyaW5n
 - `ord(char: string) : int` an alias for String.prototype.charCodeAt
 - `startsWith(text: string, start: string) : bool` returns true only if the first arg starts with the second arg
 - `endsWith(text: string, end: string) : bool` returns true only if the first arg ends with the second arg
+- `multiplyString(str: string, count: int) : string` returns he original string repeated count times
 
 ### Time functions
 - `performance.now() : float` returns the milliseconds that passed since the process started
@@ -60,3 +61,6 @@ console.log(M.btoa("Encode this string")); // outputs: RW5jb2RlIHRoaXMgc3RyaW5n
 - `union(set1: set, set2: set) : set` returns the union of two sets
 - `intersection(set1: set, set2: set) : set` returns the intersection of two sets
 - `difference(set1: set, set2: set) : set` returns the difference of two sets
+
+### function-related functions
+- `repeatFunction(func: function, count: int, argsArray: array) : array` executes a function count times and returns the function return values in an array

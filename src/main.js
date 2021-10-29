@@ -168,6 +168,15 @@ function endsWith(str, end) {
 	return str.substr(-end.length, end.length) === end;
 }
 
+function multiplyString(str, count) {
+	if (!Number.isInteger(count))
+		throw new TypeError("Argument count must be an integer");
+	let out = "";
+	for (let i = 0; i < count; i++)
+		out += str;
+	return out;
+}
+
 function listEquals(list1, list2) {
 	if (list1.__proto__ === list2.__proto__ && list1.__proto__ === Set.prototype) {
 		if (list1.size !== list2.size)
@@ -215,6 +224,23 @@ function difference(set1, set2) {
 	return new Set([...set1].filter(x => !set2.has(x)));
 }
 
+function repeatFunction(func, count, argsArray=undefined) {
+	if (!Number.isInteger(count))
+		throw new TypeError("Argument count must be an integer");
+	let results = [];
+	if (argsArray) {
+		for (let i = 0; i < count; i++) {
+			results.push(func(...argsArray));
+		}
+	}
+	else {
+		for (let i = 0; i < count; i++) {
+			results.push(func());
+		}
+	}
+	return results;
+}
+
 
 module.exports = {
 	atob,
@@ -243,9 +269,11 @@ module.exports = {
 	isPrime,
 	startsWith,
 	endsWith,
+	multiplyString,
 	listEquals,
 	shuffle,
 	union,
 	intersection,
 	difference,
+	repeatFunction,
 };

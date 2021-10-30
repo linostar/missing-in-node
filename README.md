@@ -44,7 +44,7 @@ console.log(M.btoa("Encode this string")); // outputs: RW5jb2RlIHRoaXMgc3RyaW5n
 - `randomFromList(list: array) : any` returns a random element from list
 - `randomFromObject(obj: object): object` returns a random key-value pair from an object
 - `crypto.randomInt(n1: int, n2: int) : int` cryptograhically secure random integer generator
-- `crypto.getRandomValues(array) : array` fills an array with random values likes its browser counterpart
+- `crypto.getRandomValues(array) : array` fills an array with random values similarly to its browser counterpart
 
 ### Numerical functions
 - `bin(num: int) : string` an alias for .toString(2)

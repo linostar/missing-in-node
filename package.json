@@ -7,6 +7,7 @@
     "string",
     "number",
     "random",
+    "shuffle",
     "atob",
     "btoa",
     "browser",
@@ -14,7 +15,9 @@
     "utilities",
     "factorial",
     "fibonacci",
-    "set"
+    "prime",
+    "set",
+    "repeat"
   ],
   "scripts": {
     "start": "node src/main.js",

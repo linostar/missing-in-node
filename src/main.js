@@ -87,10 +87,14 @@ function randomHexDigit() {
 }
 
 function randomFromList(list) {
+	if (!list)
+		return undefined;
 	return list[randomInt(list.length)];
 }
 
 function randomFromObject(object) {
+	if (!object)
+		return undefined;
 	let key = randomFromList(Object.keys(object));
 	let out = {};
 	out[key] = object[key];

@@ -33,6 +33,8 @@ console.log(M.btoa("Encode this string")); // outputs: RW5jb2RlIHRoaXMgc3RyaW5n
 
 ### Random functions
 - `randomInt(n1: int, n2: int) : int` fast but cryptographically insecure function that returns an integer between 0 and (n1 - 1) if only n1 is provided, otherwise an integer between n1 and (n2 - 1)
+- `randomIntWeighted(n1: int, n2: int, weight: float) : int` same as ramdomInt but with weight parameter (between 0 and 1) that makes the random distribution leans towards n1 or n2
+- `randomIntsInRange(n1 : int, n2: int, count: int) : array` returns an array with count numbers of ordered random integers between n1 and (n2 - 1)
 - `randomFloat(n1: float, n2: float) : float` returns a float between 0 and n1 if only n1 is provided, otherwise a float between n1 and n2
 - `randomBool() : bool` returns true or false randomly
 - `randomAlphaNumeric() : string` returns a random alphanumeric character (from A-Z or a-z or 0-9)

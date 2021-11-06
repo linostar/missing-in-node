@@ -37,6 +37,34 @@ function randomInt(n1, n2) {
 	}
 }
 
+function randomIntWeighted(n1, n2, weight) {
+	// returns a random int between n1 and (n2 - 1) based on weight (between 0 and 1)
+	// the closer the weight to 0, the more chance the return value will lean towards n1
+	// the closer the weight to 1, the more chance the return value will lean towards n2
+	let threshold = n1 + Math.floor((n2 - n1) * weight);
+	if (Math.random() < weight) {
+		return randomInt(n1, threshold);
+	}
+	else {
+		return randomInt(threshold, n2);
+	}
+}
+
+function randomIntsInRange(n1, n2, count) {
+	// returns an array with count numbers of ordered random integers between n1 and (n2 - 1)
+	let arr = [];
+	if (n2 <= n1)
+		return arr;
+    let oldValue = n1;
+    let newValue = -1;
+    while (arr.length < count) {
+        newValue = randomInt(oldValue, n2);
+        arr.push(newValue);
+        oldValue = Math.min(newValue + 1, n2 - 1);
+    }
+    return arr;
+}
+
 function randomFloat(n1, n2) {
 	// returns a random float between n1 and n2 exclusive if n1 and n2 are provided
 	// or returns a random float between 0 and n1 exclusive if only n1 is provided
@@ -57,42 +85,50 @@ function randomBool() {
 }
 
 function randomAlphaNumeric() {
+	// returns one char from chars below
 	let chars = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789";
 	return chars.substr(randomInt(chars.length), 1);
 }
 
 function randomAlpha() {
+	// returns one char from chars below
 	let chars = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz";
 	return chars.substr(randomInt(chars.length), 1);
 }
 
 function randomAlphaUpper() {
+	// returns one char from chars below
 	let chars = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
 	return chars.substr(randomInt(chars.length), 1);
 }
 
 function randomAlphaLower() {
+	// returns one char from chars below
 	let chars = "abcdefghijklmnopqrstuvwxyz";
 	return chars.substr(randomInt(chars.length), 1);
 }
 
 function randomDigit() {
+	// returns one char from chars below
 	let chars = "0123456789";
 	return chars.substr(randomInt(chars.length), 1);
 }
 
 function randomHexDigit() {
+	// returns one char from chars below
 	let chars = "0123456789ABCDEF";
 	return chars.substr(randomInt(chars.length), 1);
 }
 
 function randomFromList(list) {
+	// returns random element from list
 	if (!list)
 		return undefined;
 	return list[randomInt(list.length)];
 }
 
 function randomFromObject(object) {
+	// returns random key/pair as object from object
 	if (!object)
 		return undefined;
 	let key = randomFromList(Object.keys(object));
@@ -182,6 +218,7 @@ function multiplyString(str, count) {
 }
 
 function listEquals(list1, list2) {
+	// compares 2 arrays or 2 sets and returns true or false
 	if (list1.__proto__ === list2.__proto__ && list1.__proto__ === Set.prototype) {
 		if (list1.size !== list2.size)
 			return false;
@@ -202,7 +239,7 @@ function listEquals(list1, list2) {
 }
 
 function shuffle(arr) {
-	// Knuth shuffle
+	// Knuth shuffle for arrays; doesn't mutate the array in argument
 	let result = [];
 	let currentIndex = arr.length;
 	let randomIndex;
@@ -252,6 +289,8 @@ module.exports = {
 	crypto,
 	performance,
 	randomInt,
+	randomIntWeighted,
+	randomIntsInRange,
 	randomFloat,
 	randomBool,
 	randomAlphaNumeric,

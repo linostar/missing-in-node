@@ -69,6 +69,22 @@ describe("Test the random functions", function() {
 		expect(number2).to.be.above(99).and.to.be.lessThan(200, "number2 is incorrect");
 	});
 
+	it("Test randomIntWeighted function", function() {
+		let arr = [];
+		for (let i = 0; i < 1e4; i++)
+			arr.push(M.randomIntWeighted(0, 101, 0.7));
+		let average = arr.filter(x => x < 70).length / 1e2; 
+
+		expect(average).to.be.above(68).and.to.be.lessThan(72, "average is not within range");
+	});
+
+	it("Test randomIntsInRange function", function() {
+		let arr = M.randomIntsInRange(100, 200, 5);
+		
+		expect(arr).to.have.lengthOf(5, "array length is incorrect");
+		expect(arr.filter(x => (x >= 100 && x < 200))).to.have.lengthOf(5, "some numbers of array are incorrect");
+	});
+
 	it("Test randomFloat function", function() {
 		let number1 = M.randomFloat(100);
 		let number2 = M.randomFloat(100, 200);

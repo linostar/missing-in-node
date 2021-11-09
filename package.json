@@ -1,6 +1,6 @@
 {
   "name": "missing-in-node",
-  "version": "1.6.0",
+  "version": "1.6.1",
   "description": "Functions that exist in common browsers but are missing in node",
   "main": "src/main.js",
   "keywords": [

@@ -51,9 +51,9 @@ describe("Test time functions", function() {
 	});
 
 	it("Test sleep()", async function() {
-		let t1 = performance.now();
+		let t1 = M.performance.now();
 		await M.sleep(100);
-		let t2 = performance.now();
+		let t2 = M.performance.now();
 
 		expect(t2 - t1).to.be.above(90).and.to.be.lessThan(111, "Delay is not correct");
 	});

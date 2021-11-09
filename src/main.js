@@ -6,6 +6,9 @@ function crypto() {}
 
 crypto.getRandomValues = getRandomValues;
 
+function sleep(milliseconds) {
+	return new Promise((resolve) => setTimeout(resolve, milliseconds));
+}
 
 function getRandomValues(array) {
 	return cryp.randomFillSync(array);
@@ -288,6 +291,7 @@ module.exports = {
 	btoa,
 	crypto,
 	performance,
+	sleep,
 	randomInt,
 	randomIntWeighted,
 	randomIntsInRange,

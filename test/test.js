@@ -45,9 +45,17 @@ describe("Test btoa function", function() {
 	});
 });
 
-describe("Test performance functions", function() {
+describe("Test time functions", function() {
 	it("Test performance.now()", function() {
 		expect(typeof M.performance.now()).to.be.equal("number", "performance.now() is not a number");
+	});
+
+	it("Test sleep()", async function() {
+		let t1 = performance.now();
+		await M.sleep(100);
+		let t2 = performance.now();
+
+		expect(t2 - t1).to.be.above(90).and.to.be.lessThan(111, "Delay is not correct");
 	});
 });
 

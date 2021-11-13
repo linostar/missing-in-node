@@ -241,6 +241,11 @@ function listEquals(list1, list2) {
 	}
 }
 
+function reverse(arr) {
+	// reverses an array without chaning the original array
+	return arr.slice().reverse();
+}
+
 function shuffle(arr) {
 	// Knuth shuffle for arrays; doesn't mutate the array in argument
 	let result = [];
@@ -318,6 +323,7 @@ module.exports = {
 	endsWith,
 	multiplyString,
 	listEquals,
+	reverse,
 	shuffle,
 	union,
 	intersection,

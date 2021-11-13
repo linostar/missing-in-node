@@ -252,6 +252,15 @@ describe("Test string functions", function() {
 });
 
 describe("Test array functions", function() {
+
+	it("Test reverse function", function() {
+		let arr = [0, 1, 2, 3, 4, 5, 6, 7, 8, 9];
+		let arr2 = M.reverse(arr);
+
+		expect(arr2).to.have.lengthOf(arr.length, "length of resulting array is incorrect");
+		expect(arr2.toString()).to.be.equal("9,8,7,6,5,4,3,2,1,0", "array values are incorrect");
+	});
+
 	it("Test shuffle function", function() {
 		let arr = [0, 1, 2, 3, 4, 5, 6, 7, 8, 9];
 		let arr2 = M.shuffle(arr);

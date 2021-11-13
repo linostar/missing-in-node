@@ -60,6 +60,7 @@ console.log(M.btoa("Encode this string")); // outputs: RW5jb2RlIHRoaXMgc3RyaW5n
 
 ### List functions
 - `listEquals(list1, list2) : bool` determines if two arrays or two sets are equal (for primitive type elements only)
+- `reverse(arr: array) : array` returns a reversed array without modifying the original one
 - `shuffle(arr: array) : array` returns a shuffled array (using Knuth method) without modifying the original one
 - `union(set1: set, set2: set) : set` returns the union of two sets
 - `intersection(set1: set, set2: set) : set` returns the intersection of two sets

@@ -290,6 +290,21 @@ function repeatFunction(func, count, argsArray=undefined) {
 	return results;
 }
 
+function multiFunction(arg, funcArray, classObj=undefined) {
+	let out = arg;
+	if (classObj) {
+		for (let func of funcArray) {
+			out = classObj[func](out);
+		}
+	}
+	else {
+		for (let func of funcArray) {
+			out = func(out);
+		}
+	}
+	return out;
+}
+
 
 module.exports = {
 	atob,
@@ -329,4 +344,5 @@ module.exports = {
 	intersection,
 	difference,
 	repeatFunction,
+	multiFunction,
 };

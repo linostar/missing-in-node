@@ -68,3 +68,4 @@ console.log(M.btoa("Encode this string")); // outputs: RW5jb2RlIHRoaXMgc3RyaW5n
 
 ### function-related functions
 - `repeatFunction(func: function, count: int, argsArray: array) : array` executes a function count times and returns the function return values in an array
+- `multiFunction(arg: any, funcArray: array, classObj: object) : any`  applies the functions in funcArray in order on the argument arg; elements in funcArray must be either funciton objects if classObj is not supplied, or strings that represent methods of classObj otherwise

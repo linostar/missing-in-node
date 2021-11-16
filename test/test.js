@@ -307,4 +307,12 @@ describe("Test function-related functions", function() {
 
 		expect(M.listEquals(ret, expectedResult)).to.be.equal(true, "arrays are not equal");
 	});
+
+	it("Test multiFunction function", function() {
+		let square = (x) => x ** 2;
+		let cube = (x) => x ** 3;
+		let ret = M.multiFunction(2, [square, cube, square]);
+
+		expect(ret).to.be.equal(4096, "value is incorrect");
+	});
 });

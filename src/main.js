@@ -305,6 +305,19 @@ function multiFunction(arg, funcArray, classObj=undefined) {
 	return out;
 }
 
+function runSequential(funcArray) {
+	// each element in funcArray is an object with the format { func: functionObj, args: [...] }
+	let outputs = [];
+	for (let func of funcArray)
+		outputs.push(func.func(...func.args));
+	return outputs;
+}
+
+async function runConcurrent(funcArray) {
+	// each element in funcArray is an object with the format { func: functionObj, args: [...] }
+	return await Promise.all(funcArray.map(obj => obj.func(...obj.args)));
+}
+
 
 module.exports = {
 	atob,
@@ -345,4 +358,6 @@ module.exports = {
 	difference,
 	repeatFunction,
 	multiFunction,
+	runSequential,
+	runConcurrent
 };

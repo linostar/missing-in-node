@@ -315,4 +315,24 @@ describe("Test function-related functions", function() {
 
 		expect(ret).to.be.equal(4096, "value is incorrect");
 	});
+
+	it("Test runSequential function", function() {
+		let funcArray = [
+			{ func: x => x * 2, args: [5] },
+			{ func: (x, y) => x + y, args: [5, 2] },
+			{ func: () => {}, args: [] }
+		];
+
+		expect(M.listEquals(M.runSequential(funcArray), [10, 7, undefined])).to.be.equal(true, "arrays are not equal");
+	});
+
+	it("Test runConcurrent function", async function() {
+		let funcArray = [
+			{ func: x => x * 2, args: [5] },
+			{ func: (x, y) => x + y, args: [5, 2] },
+			{ func: () => {}, args: [] }
+		];
+
+		expect(M.listEquals(await M.runConcurrent(funcArray), [10, 7, undefined])).to.be.equal(true, "arrays are not equal");
+	});
 });

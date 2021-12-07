@@ -60,11 +60,13 @@ console.log(M.btoa("Encode this string")); // outputs: RW5jb2RlIHRoaXMgc3RyaW5n
 
 ### List functions
 - `listEquals(list1, list2) : bool` determines if two arrays or two sets are equal (for primitive type elements only)
+- `objectEquals(object1, object2) : bool` determines if two objects or are equal (for primitive type values only)
 - `reverse(arr: array) : array` returns a reversed array without modifying the original one
 - `shuffle(arr: array) : array` returns a shuffled array (using Knuth method) without modifying the original one
 - `union(set1: set, set2: set) : set` returns the union of two sets
 - `intersection(set1: set, set2: set) : set` returns the intersection of two sets
 - `difference(set1: set, set2: set) : set` returns the difference of two sets
+- `clone(obj: any) : any` returns a shallow copy of an object or an array
 
 ### function-related functions
 - `repeatFunction(func: function, count: int, argsArray: array) : array` executes a function count times and returns the function return values in an array

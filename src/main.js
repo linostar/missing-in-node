@@ -241,6 +241,10 @@ function listEquals(list1, list2) {
 	}
 }
 
+function objectEquals(obj1, obj2) {
+	return listEquals(Object.entries(obj1), Object.entries(obj2));
+}
+
 function reverse(arr) {
 	// reverses an array without chaning the original array
 	return arr.slice().reverse();
@@ -271,6 +275,25 @@ function intersection(set1, set2) {
 
 function difference(set1, set2) {
 	return new Set([...set1].filter(x => !set2.has(x)));
+}
+
+function clone(obj) {
+	if (Array.isArray(obj)) {
+		return obj.slice();
+	}
+	else if (obj.__proto__ == Set.prototype) {
+		return new Set(obj);
+	}
+	else if (typeof obj === "object") {
+		return JSON.parse(JSON.stringify(obj));
+	}
+	else if (typeof obj === "function") {
+		throw TypeError("obj argument cannot be a function");
+	}
+	else {
+		// primitive type, return it as it is
+		return obj;
+	}
 }
 
 function repeatFunction(func, count, argsArray=undefined) {
@@ -351,11 +374,13 @@ module.exports = {
 	endsWith,
 	multiplyString,
 	listEquals,
+	objectEquals,
 	reverse,
 	shuffle,
 	union,
 	intersection,
 	difference,
+	clone,
 	repeatFunction,
 	multiFunction,
 	runSequential,

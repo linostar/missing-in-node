@@ -252,7 +252,6 @@ describe("Test string functions", function() {
 });
 
 describe("Test array functions", function() {
-
 	it("Test reverse function", function() {
 		let arr = [0, 1, 2, 3, 4, 5, 6, 7, 8, 9];
 		let arr2 = M.reverse(arr);
@@ -296,6 +295,11 @@ describe("Test set functions", function() {
 		let setDifference = M.difference(set1, set2);
 
 		expect(M.listEquals(setDifference, expectedResult)).to.be.equal(true, "sets are not equal");
+	});
+
+	it("Test clone function", function() {
+		expect(M.listEquals(M.clone([1, 2, 3]), [1, 2, 3])).to.be.equal(true, "arrays are not equal");
+		expect(M.objectEquals(M.clone({"a": 1, "b": 2}), {"a": 1, "b": 2})).to.be.equal(true, "objects are not equal");
 	});
 });
 

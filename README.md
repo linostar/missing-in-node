@@ -54,6 +54,7 @@ console.log(M.btoa("Encode this string")); // outputs: RW5jb2RlIHRoaXMgc3RyaW5n
 - `oct(num: int) : string` an alias for .toString(8)
 - `hex(num: int) : string` an alias for .toString(16)
 - `dec(num: string, base: int) : int` an alias for parseInt(num, base)
+- `round(number: float or string, decimalDigits: int) : float` rounds a number to a particular number of decimal digits
 - `factorial(num: int) : int` calculates the factorial of a positive integer
 - `fibonacci(num: int) : int` calculates the n-th number in fibonacci series using non-recursive method
 - `isPrime(num: int) : bool` determines whether an integer is prime or not

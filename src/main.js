@@ -167,6 +167,10 @@ function dec(str, base) {
 	return parseInt(str, base);
 }
 
+function round(number, decimalDigits=0) {
+	return parseFloat(Number(number).toFixed(decimalDigits));
+}
+
 function factorial(num) {
 	let result = 1;
 	num = parseInt(num);
@@ -367,6 +371,7 @@ module.exports = {
 	oct,
 	hex,
 	dec,
+	round,
 	factorial,
 	fibonacci,
 	isPrime,

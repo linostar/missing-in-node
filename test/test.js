@@ -204,6 +204,12 @@ describe("Test numerical functions", function() {
 		expect(num).to.be.equal(70, "num is incorrect");
 	});
 
+	it("Test round function", function() {
+		expect(M.round(11.6)).to.be.equal(12, "result is incorrect");
+		expect(M.round(3.14159, 2)).to.be.equal(3.14, "result is incorrect");
+		expect(M.round(-0.889, 1)).to.be.equal(-0.9, "result is incorrect");
+	});
+
 	it("Test factorial function", function() {
 		let num1 = M.factorial(6);
 		let num2 = M.factorial(13);

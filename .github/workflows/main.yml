@@ -1,6 +1,6 @@
 # This is a basic workflow to help you get started with Actions
 
-name: Build
+name: Test
 
 # Controls when the workflow will run
 on:
@@ -27,6 +27,9 @@ jobs:
 
       - name: Make a clean installation
         run: rm -rf node_modules && yarn install --frozen-lockfile
+
+      - name: Run ESLint
+        run: npx eslint .
 
       - name: Run tests
         run: yarn test

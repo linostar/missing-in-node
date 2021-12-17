@@ -1,4 +1,3 @@
-const mocha = require("mocha");
 const { expect } = require("chai");
 const M = require("../src/main.js");
 

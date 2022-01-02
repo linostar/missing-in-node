@@ -345,6 +345,14 @@ async function runConcurrent(funcArray) {
 	return await Promise.all(funcArray.map(obj => obj.func(...obj.args)));
 }
 
+function benchmark(func, count, argsArray) {
+	console.time(func.name);
+	for (let i = 0; i < count; i++) {
+		func(...argsArray);
+	}
+	console.timeEnd(func.name);
+}
+
 
 module.exports = {
 	atob,
@@ -389,5 +397,6 @@ module.exports = {
 	repeatFunction,
 	multiFunction,
 	runSequential,
-	runConcurrent
+	runConcurrent,
+	benchmark
 };

@@ -26,6 +26,7 @@ console.log(M.btoa("Encode this string")); // outputs: RW5jb2RlIHRoaXMgc3RyaW5n
 - `ord(char: string) : int` an alias for String.prototype.charCodeAt
 - `startsWith(text: string, start: string) : bool` returns true only if the first arg starts with the second arg
 - `endsWith(text: string, end: string) : bool` returns true only if the first arg ends with the second arg
+- `occurences(haystack: string, needle: string) : int` returns number of occurences of a string in another string
 - `multiplyString(str: string, count: int) : string` returns he original string repeated count times
 
 ### Time functions

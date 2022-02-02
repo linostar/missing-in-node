@@ -215,6 +215,10 @@ function endsWith(str, end) {
 	return str.substr(-end.length, end.length) === end;
 }
 
+function occurences(haystack, needle) {
+	return haystack.split(needle).length - 1;
+}
+
 function multiplyString(str, count) {
 	if (!Number.isInteger(count))
 		throw new TypeError("Argument count must be an integer");
@@ -385,6 +389,7 @@ module.exports = {
 	isPrime,
 	startsWith,
 	endsWith,
+	occurences,
 	multiplyString,
 	listEquals,
 	objectEquals,

@@ -249,6 +249,12 @@ describe("Test string functions", function() {
 		expect(res2).to.be.equal(true, "res2 is incorrect");
 	});
 
+	it("Test occurences function", function() {
+		let res = M.occurences("Hello", "l")
+
+		expect(res).to.be.equal(2, "number of occurences is incorrect");
+	});
+
 	it("Test multiplyString function", function() {
 		let res = M.multiplyString("abc", 3)
 

@@ -24,6 +24,7 @@ console.log(M.btoa("Encode this string")); // outputs: RW5jb2RlIHRoaXMgc3RyaW5n
 - `btoa(input: string) : string` encodes into a Base64 string
 - `chr(num: int) : string` an alias for String.fromCharCode
 - `ord(char: string) : int` an alias for String.prototype.charCodeAt
+- `reverse(input: string) : string` returns the reversed string without modifying the original one
 - `startsWith(text: string, start: string) : bool` returns true only if the first arg starts with the second arg
 - `endsWith(text: string, end: string) : bool` returns true only if the first arg ends with the second arg
 - `occurences(haystack: string, needle: string) : int` returns number of occurences of a string in another string
@@ -56,6 +57,7 @@ console.log(M.btoa("Encode this string")); // outputs: RW5jb2RlIHRoaXMgc3RyaW5n
 - `hex(num: int) : string` an alias for .toString(16)
 - `dec(num: string, base: int) : int` an alias for parseInt(num, base)
 - `round(number: float or string, decimalDigits: int) : float` rounds a number to a particular number of decimal digits
+- `reverse(input: number) : number` returns the reversed number without modifying the original one
 - `factorial(num: int) : int` calculates the factorial of a positive integer
 - `fibonacci(num: int) : int` calculates the n-th number in fibonacci series using non-recursive method
 - `isPrime(num: int) : bool` determines whether an integer is prime or not
@@ -63,7 +65,7 @@ console.log(M.btoa("Encode this string")); // outputs: RW5jb2RlIHRoaXMgc3RyaW5n
 ### List functions
 - `listEquals(list1, list2) : bool` determines if two arrays or two sets are equal (for primitive type elements only)
 - `objectEquals(object1, object2) : bool` determines if two objects or are equal (for primitive type values only)
-- `reverse(arr: array) : array` returns a reversed array without modifying the original one
+- `reverse(input: array) : array` returns a reversed array without modifying the original one
 - `shuffle(arr: array) : array` returns a shuffled array (using Knuth method) without modifying the original one
 - `union(set1: set, set2: set) : set` returns the union of two sets
 - `intersection(set1: set, set2: set) : set` returns the intersection of two sets

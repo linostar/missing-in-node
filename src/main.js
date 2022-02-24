@@ -253,9 +253,16 @@ function objectEquals(obj1, obj2) {
 	return listEquals(Object.entries(obj1), Object.entries(obj2));
 }
 
-function reverse(arr) {
-	// reverses an array without chaning the original array
-	return arr.slice().reverse();
+function reverse(input) {
+	// reverses an array/string/number without chaning the original
+	if (Array.isArray(input))
+		return input.slice().reverse();
+	else if (typeof input === "string")
+		return input.split("").reverse().join("");
+	else if (typeof input === "number")
+		return Number(input.toString().split("").reverse().join("")).valueOf();
+	else
+		throw new TypeError("Error: input type is not supported");
 }
 
 function shuffle(arr) {

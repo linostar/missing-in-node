@@ -130,6 +130,22 @@ function randomFromList(list) {
 	return list[randomInt(list.length)];
 }
 
+function randomWithPercentage(obj) {
+	// normalize the denominator to 1
+	let object = JSON.parse(JSON.stringify(obj));
+	let denominator = Object.values(object).reduce((a, b) => a + b, 0);
+	Object.keys(object).map(k => object[k] = object[k] / denominator);
+	// accumulate the percentages
+	let accumulated = 0;
+	Object.keys(object).map(k => (object[k] += accumulated, accumulated = object[k]));
+	// choose now
+	let choice = Math.random();
+	for (let entry of Object.entries(object)) {
+		if (choice < entry[1])
+			return entry[0];
+	}
+}
+
 function randomFromObject(object) {
 	// returns random key/pair as object from object
 	if (!object)
@@ -383,6 +399,7 @@ module.exports = {
 	randomDigit,
 	randomHexDigit,
 	randomFromList,
+	randomWithPercentage,
 	randomFromObject,
 	chr,
 	ord,

@@ -148,11 +148,20 @@ describe("Test the random functions", function() {
 		expect(chars.includes(value)).to.be.equal(true, "value is not in chars");
 	});
 
-	it("Test randomFromArray function", function() {
+	it("Test randomFromList function", function() {
 		let list = [123, "hello", -1.1234, false, "world"];
 		let value = M.randomFromList(list);
 
 		expect(list).to.include(value, "value is not in list");
+	});
+
+	it("Test randomWithPercentage", function() {
+		let object = {"10": 10, "20": 90};
+		let sum = 0;
+		for (let i =0; i < 1e5; i++)
+			sum += parseInt(M.randomWithPercentage(object));
+
+		expect(Math.round(sum / 1e5)).to.be.equal(19, "average value is not within expected range");
 	});
 
 	it("Test randomFromObject function", function() {

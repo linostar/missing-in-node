@@ -56,8 +56,9 @@ console.log(M.btoa("Encode this string")); // outputs: RW5jb2RlIHRoaXMgc3RyaW5n
 - `bin(num: int) : string` an alias for .toString(2)
 - `oct(num: int) : string` an alias for .toString(8)
 - `hex(num: int) : string` an alias for .toString(16)
+- `hex(text: string) : string` converts a text or a binary string to hexadecimal string
+- `hex(arr: array) : string` converts an array of bytes to hexadecimal string
 - `dec(num: string, base: int) : int` an alias for parseInt(num, base)
-- `hexText(text: string) : string` converts a text or a binary string to hexadecimal format
 - `round(number: float or string, decimalDigits: int) : float` rounds a number to a particular number of decimal digits
 - `reverse(input: number) : number` returns the reversed number without modifying the original one
 - `factorial(num: int) : int` calculates the factorial of a positive integer

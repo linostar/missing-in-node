@@ -200,22 +200,28 @@ describe("Test numerical functions", function() {
 		expect(num).to.be.equal("106", "num is incorrect");
 	});
 
-	it("Test hex function", function() {
+	it("Test hex function with numbers", function() {
 		let num = M.hex(70);
 
 		expect(num).to.be.equal("46", "num is incorrect");
+	});
+
+	it("Test hex function with strings", function() {
+		let out = M.hex("Hello world!");
+
+		expect(out).to.be.equal("48656c6c6f20776f726c6421", "output is incorrect");
+	});
+
+	it("Test hex function with arrays of bytes", function() {
+		let out = M.hex([65, 66,67]);
+
+		expect(out).to.be.equal("414243", "output is incorrect");
 	});
 
 	it("Test dec function", function() {
 		let num = M.dec("46", 16);
 
 		expect(num).to.be.equal(70, "num is incorrect");
-	});
-
-	it("Test hexText function", function() {
-		let out = M.hexText("Hello world!");
-
-		expect(out).to.be.equal("48656c6c6f20776f726c6421", "output is incorrect");
 	});
 
 	it("Test round function", function() {

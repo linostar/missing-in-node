@@ -174,19 +174,32 @@ function oct(num) {
 	return num.toString(8);
 }
 
-function hex(num) {
-	// convert decimal to hexadecimal
-	return num.toString(16);
-}
-
-function hexText(text) {
-	// convert text to hexadecimal chars
-	let output = "";
-	for (let i = 0; i < text.length; i++) {
-		let next_char = ord(text[i]).toString(16);
-		output += 2 === next_char.length ? next_char : "0" + next_char;
+function hex(input) {
+	// convert anything to hexadecimal
+	if (typeof input === "number") {
+		return input.toString(16);
 	}
-	return output;
+	else if (typeof input === "string") {
+		// checks if it's a String,
+		let output = "";
+		for (let i = 0; i < input.length; i++) {
+			let next_char = ord(input[i]).toString(16);
+			output += 2 === next_char.length ? next_char : "0" + next_char;
+		}
+		return output;
+	}
+	else if (input.reverse) {
+		// checks if it's an Array or a TypedArray
+		let output = "";
+		for (let i = 0; i < input.length; i++) {
+			let next_char = input[i].toString(16);
+			output += 2 === next_char.length ? next_char : "0" + next_char;
+		}
+		return output;
+	}
+	else {
+		throw new TypeError("Error: input type is not supported.");
+	}
 }
 
 function dec(str, base) {
@@ -417,7 +430,6 @@ module.exports = {
 	oct,
 	hex,
 	dec,
-	hexText,
 	round,
 	factorial,
 	fibonacci,

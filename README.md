@@ -47,7 +47,7 @@ console.log(M.btoa("Encode this string")); // outputs: RW5jb2RlIHRoaXMgc3RyaW5n
 - `randomDigit() : string` returns a random decimal digit character (from 0-9)
 - `randomHexDigit() : string` returns a random hexadecimal digit character (from 0-9 or A-F)
 - `randomFromList(list: array) : any` returns a random element from list
-- `randomWithPercentage(obj: object): any` returns a random key from an object with format {"<option1>": <percentage1>, "<option2>": <percentage2>, ...}
+- `randomWithPercentage(obj: object): any` returns a random key from an object with format `{"option1": percentage1, "option2": percentage2, ...}`
 - `randomFromObject(obj: object): object` returns a random key-value pair from an object
 - `crypto.randomInt(n1: int, n2: int) : int` cryptograhically secure random integer generator
 - `crypto.getRandomValues(array) : array` fills an array with random values similarly to its browser counterpart

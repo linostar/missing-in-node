@@ -170,13 +170,23 @@ function bin(num) {
 }
 
 function oct(num) {
-	// convert decimal to binary
+	// convert decimal to octal
 	return num.toString(8);
 }
 
 function hex(num) {
-	// convert decimal to binary
+	// convert decimal to hexadecimal
 	return num.toString(16);
+}
+
+function hexText(text) {
+	// convert text to hexadecimal chars
+	let output = "";
+	for (let i = 0; i < text.length; i++) {
+		let next_char = ord(text[i]).toString(16);
+		output += 2 === next_char.length ? next_char : "0" + next_char;
+	}
+	return output;
 }
 
 function dec(str, base) {
@@ -407,6 +417,7 @@ module.exports = {
 	oct,
 	hex,
 	dec,
+	hexText,
 	round,
 	factorial,
 	fibonacci,

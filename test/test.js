@@ -212,6 +212,12 @@ describe("Test numerical functions", function() {
 		expect(num).to.be.equal(70, "num is incorrect");
 	});
 
+	it("Test hexText function", function() {
+		let out = M.hexText("Hello world!");
+
+		expect(out).to.be.equal("48656c6c6f20776f726c6421", "output is incorrect");
+	});
+
 	it("Test round function", function() {
 		expect(M.round(11.6)).to.be.equal(12, "result is incorrect");
 		expect(M.round(3.14159, 2)).to.be.equal(3.14, "result is incorrect");
